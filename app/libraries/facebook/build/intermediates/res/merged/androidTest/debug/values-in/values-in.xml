@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/souzadomingues/AndroidStudioProjects/scape2.1/scape2.0/app/libraries/facebook/build/intermediates/bundles/debug/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/libraries/facebook/build/intermediates/bundles/debug/res/values-in/values-in.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Kirim</string>
 </resources>
