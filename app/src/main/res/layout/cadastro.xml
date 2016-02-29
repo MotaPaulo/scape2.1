@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFFFF"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <EditText
+        android:id="@+id/nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="#f0f0f0"
+        android:minHeight="50dp"
+        android:minWidth="300dp"
+        android:hint="@string/nome"
+        android:paddingStart="15dp"
+        android:textCursorDrawable="@null"
+        android:elegantTextHeight="true"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp">
+    </EditText>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:minHeight="50dp"
+        android:minWidth="300dp"
+        android:hint="@string/email"
+        android:background="#f0f0f0"
+        android:layout_below="@+id/nome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:paddingStart="15dp"
+        android:elegantTextHeight="true"
+        android:textCursorDrawable="@null"
+        />
+
+    <EditText
+        android:id="@+id/usariossenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:minHeight="50dp"
+        android:minWidth="300dp"
+        android:hint="@string/senha"
+        android:background="#f0f0f0"
+        android:layout_below="@+id/email"
+        android:layout_alignLeft="@+id/email"
+        android:layout_alignStart="@+id/email"
+        android:layout_marginTop="20dp"
+        android:paddingStart="15dp"
+        android:elegantTextHeight="true"
+        android:textCursorDrawable="@null"
+        />
+
+    <Button
+        android:id="@+id/logar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastro"
+        android:minHeight="45dp"
+        android:minWidth="300dp"
+        android:background="#4c73a6"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:focusable="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/usariossenha"
+        android:layout_alignLeft="@+id/usariossenha"
+        android:layout_alignStart="@+id/usariossenha"
+        android:layout_alignRight="@+id/usariossenha"
+        android:layout_alignEnd="@+id/usariossenha"
+        android:background="#f0f0f0"
+        android:layout_marginTop="20dp"
+        android:minWidth="300dp"
+        android:minHeight="50dp"
+        android:hint="@string/confirmarsenha"
+        android:paddingStart="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/preenchercampos"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

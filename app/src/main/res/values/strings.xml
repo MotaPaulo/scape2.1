@@ -1,0 +1,84 @@
+<resources>
+<string name="app_name">SCAPE</string>
+<string name="action_settings">Configurações</string>
+<string name="section_format">Hello World from section: %1$d</string>
+
+<string name="facebook_app_id">1593332177596278</string>
+
+<!-- Fragment_tab1-->
+<string name="nome">Nome de usuário</string>
+<string name="email" translatable="false">Email</string>
+<string name="senha">Senha</string>
+<string name="login">Entrar</string>
+<string name="cadastrar">Não possui uma conta? Cadastre-se.</string>
+<string name="naonotificacao">Não há novas notificações</string>
+<string name="ou">- OU -</string>
+<string name="conta">CONTA</string>
+<string name="dadospessoais">Dados pessoais</string>
+<string name="eventoAtual">Evento atual: </string>
+<string name="totaleventos">Total de eventos participados: </string>
+
+
+<string name="eventos">Eventos</string>
+<string name="entrar">Entrar</string>
+<string name="novousuario">Novo usuário</string>
+<string name="atividades">Atividades</string>
+<string name="agenda">Agenda</string>
+<string name="social">Social</string>
+<string name="questionarios">Questionarios</string>
+<string name="perfil">Perfil</string>
+<string name="opiniao">Opinar</string>
+<string name="patrocinadores">Patrocinadores</string>
+    <string name="janeiro">Janeiro</string>
+    <string name="fevereiro">Fevereiro</string>
+    <string name="marco">Março</string>
+    <string name="abril">Abril</string>
+    <string name="maio">Maio</string>
+    <string name="junho">Junho</string>
+    <string name="agosto">Agosto</string>
+    <string name="julho">Julho</string>
+    <string name="setembro">Setembro</string>
+    <string name="outubro">Outubro</string>
+    <string name="novembro">Novembro</string>
+    <string name="dezembro">Dezembro</string>
+
+
+<!-- Fragment main-->
+<string name="error">Algum erro ocorreu. :(</string>
+
+<!-- Fragment_tab2-->
+<string name="atividadedisponivel">Atividades disponíveis</string>
+<string name="atividadedefault">Atividade 1</string>
+<string name="Bparticipar">Participar</string>
+
+
+<!-- Fragment_tab3-->
+<string name="horadefault" translatable="false">08:00</string>
+<string name="atividadeagendadefault">Atividade 1</string>
+<string name="diadefault">Dia 5</string>
+
+
+<!-- Fragment_tab4-->
+<string name="emdesenvolvimento">Em desenvolvimento.</string>
+<string name="title_activity_agenda2">Agenda</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+<string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <!-- Logout-->
+    <string name="greeting">Olá</string>
+    <string name="sobre">Sobre</string>
+    <string name="title_activity_opinar">Opinar</string>
+    <string name="opinesobre">Opine sobre o evento:</string>
+    <string name="enviar">Enviar</string>
+    <string name="title_activity_logout">Logout</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+
+
+<!-- New account-->
+    <string name="cadastro">Cadastrar</string>
+    <string name="confirmarsenha">Confirmar senha</string>
+    <string name="preenchercampos">Preencha os campos abaixo:</string>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SCAPE</string>
+
+    <string name="Bparticipar">Join</string>
+    <string name="action_settings">Settings</string>
+    <string name="atividadeagendadefault">Activity 1</string>
+    <string name="atividadedefault">Activity 1</string>
+    <string name="atividadedisponivel">Available activities</string>
+    <string name="cadastrar">Don\'t have an account? Sign up.</string>
+    <string name="diadefault">5</string>
+    <string name="emdesenvolvimento">At development.</string>
+    <string name="error">Something bad happened :(</string>
+    <string name="eventos">Events</string>
+    <string name="greeting">Hello</string>
+    <string name="login">Log in</string>
+    <string name="nome">Username</string>
+    <string name="ou">- OR -</string>
+    <string name="senha">Password</string>
+    <string name="title_activity_agenda2">Agenda</string>
+    <string name="questionarios">Surveys</string>
+    <string name="social">Social</string>
+    <string name="entrar">Log in</string>
+    <string name="agenda">Agenda</string>
+    <string name="atividades">Activities</string>
+    <string name="perfil">Profile</string>
+    <string name="naonotificacao">You don\'t have new notifications.</string>
+    <string name="conta">ACCOUNT</string>
+    <string name="dadospessoais">Personal info</string>
+    <string name="eventoAtual">Current event: </string>
+    <string name="totaleventos">Amount of events you joined: </string>
+    <string name="sobre">About</string>
+    <string name="opiniao">Opine</string>
+    <string name="patrocinadores">Sponsors</string>
+    <string name="enviar">Send</string>
+    <string name="opinesobre">Give your opinion:</string>
+
+    <string name="janeiro">January</string>
+    <string name="fevereiro">February</string>
+    <string name="marco">March</string>
+    <string name="abril">April</string>
+    <string name="maio">May</string>
+    <string name="junho">June</string>
+    <string name="agosto">August</string>
+    <string name="julho">July</string>
+    <string name="setembro">September</string>
+    <string name="outubro">October</string>
+    <string name="novembro">November</string>
+    <string name="dezembro">December</string>
+    <string name="novousuario">New user</string>
+
+    <!-- New account-->
+    <string name="cadastro">Sign up</string>
+    <string name="confirmarsenha">Confirm password</string>
+    <string name="preenchercampos">Fill in the fields below:</string>
+</resources>

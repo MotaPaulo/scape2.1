@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+
+
+
+
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/BTFacebookLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:minHeight="45dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/conta"
+        android:id="@+id/contaText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/contaText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/barraprincipal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nome"
+        android:id="@+id/nomeText"
+        android:textStyle="bold"
+        android:layout_below="@+id/barraprincipal"
+        android:layout_alignLeft="@+id/contaText"
+        android:layout_alignStart="@+id/contaText"
+        android:layout_marginTop="10dp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:id="@+id/barra1"
+        android:layout_below="@+id/nomeText"
+        android:layout_alignLeft="@+id/barraprincipal"
+        android:layout_alignStart="@+id/barraprincipal"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:id="@+id/barra2"
+        android:layout_below="@+id/eventoAtualText"
+        android:layout_alignLeft="@+id/barra1"
+        android:layout_alignStart="@+id/barra1"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eventoAtual"
+        android:id="@+id/eventoAtualText"
+        android:layout_below="@+id/barra1"
+        android:layout_alignLeft="@+id/nomeText"
+        android:layout_alignStart="@+id/nomeText"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totaleventos"
+        android:id="@+id/totaleventosText"
+        android:layout_below="@+id/barra2"
+        android:layout_alignLeft="@+id/eventoAtualText"
+        android:layout_alignStart="@+id/eventoAtualText"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:id="@+id/barra3"
+        android:layout_below="@+id/totaleventosText"
+        android:layout_alignLeft="@+id/barra1"
+        android:layout_alignStart="@+id/barra1"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.0/app/build/intermediates/exploded-aar/com.facebook.android/facebook/4.5.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dbb8771c554b040e0210c040e66e40c176e84bda">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.0/app/build/intermediates/pre-dexed/debug/classes-89167e1c40257549a74179e982d999e20badf6fa.jar" />
+    </item>
+
+</items>

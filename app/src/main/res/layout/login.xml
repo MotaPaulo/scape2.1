@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="#FFFFFF">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/ETnome"
+        android:minHeight="50dp"
+        android:paddingStart="15dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:autoText="false"
+        android:textCursorDrawable="@null"
+        android:hint="@string/nome"
+        android:background="#f0f0f0"
+        android:minWidth="300dp"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageView"
+        android:elegantTextHeight="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/ETsenha"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:minHeight="50dp"
+        android:paddingStart="15dp"
+        android:layout_gravity="center"
+        android:layout_below="@+id/ETnome"
+        android:hint="@string/senha"
+        android:background="#f0f0f0"
+        android:elegantTextHeight="true"
+        android:textCursorDrawable="@null"
+        android:singleLine="true"
+        android:minWidth="300dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/BTlogin"
+        android:background="#4c73a6"
+        android:textColor="#ffffff"
+        android:minWidth="300dp"
+        android:minHeight="50dp"
+        android:layout_gravity="center"
+        android:focusable="true"
+        android:layout_below="@+id/ETsenha"
+        android:layout_alignRight="@+id/ETsenha"
+        android:layout_alignEnd="@+id/ETsenha"
+        android:layout_alignLeft="@+id/ETsenha"
+        android:layout_alignStart="@+id/ETsenha"
+        android:layout_marginTop="15dp" />
+
+    <!--<ImageView-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="130dp"-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:background="@drawable/scape_logo_icon"-->
+        <!--android:layout_below="@+id/button"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_gravity="center"/>-->
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar"
+        android:id="@+id/BTcadastrar"
+        android:background="#4c73a6"
+        android:textColor="#ffffff"
+        android:minWidth="80dp"
+        android:minHeight="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/BTFacebookLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ouText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ou"
+        android:id="@+id/ouText"
+        android:layout_below="@+id/BTlogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/scapefavicon" />
+
+
+</RelativeLayout>
