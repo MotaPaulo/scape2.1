@@ -2,7 +2,6 @@ package com.scape.ufv.scape.conexaoPHP;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -18,11 +17,12 @@ import java.net.URLEncoder;
 /**
  * Created by souzadomingues on 29/02/16.
  */
-public class LogInActivity extends AsyncTask<String, Void , String> {
+public class SignUpActivity extends AsyncTask<String, Void, String> {
     private TextView statusField, roleField;
     private Context context;
 
-    public LogInActivity(Context context, TextView statusField, TextView roleField){
+
+    public SignUpActivity(Context context, TextView statusField, TextView roleField){
         this.context = context;
         this.statusField = statusField;
         this.roleField = roleField;
@@ -32,23 +32,23 @@ public class LogInActivity extends AsyncTask<String, Void , String> {
 
     }
 
-
     @Override
-    protected String doInBackground(String... params) {
-        try {
+    protected String doInBackground(String... params){
+        try{
             String usuario = (String)params[0];
-            String senha = (String)params[1];
+            String email = (String)params[1];
+            String senha = (String)params[2];
 
-            String link = "http://scape.pe.hu/App/loginApp.php";
+            String link = "http://scape.pe.hu/App/SignUpApp.php";
             String dados = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(usuario, "UTF-8");
             dados += "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(senha, "UTF-8");
-            Log.v("Dados: ", dados);
+            dados += "&" + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email,"UTF-8");
 
             URL url = new URL(link);
             URLConnection conn = url.openConnection();
 
             conn.setDoOutput(true);
-            OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+            OutputStreamWriter wr = new OutputStreamWriter((conn.getOutputStream()));
 
             wr.write(dados);
             wr.flush();
@@ -66,11 +66,12 @@ public class LogInActivity extends AsyncTask<String, Void , String> {
             return sb.toString();
 
 
-        } catch (MalformedURLException e) {
+
+        } catch(MalformedURLException e){
             e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch(UnsupportedEncodingException e){
             e.printStackTrace();
-        } catch (IOException e) {
+        } catch(IOException e){
             e.printStackTrace();
         }
 
@@ -79,7 +80,9 @@ public class LogInActivity extends AsyncTask<String, Void , String> {
 
     @Override
     protected void onPostExecute(String result){
-        this.statusField.setText("Login Successful");
+        this.statusField.setText("Sign up sucessful");
         this.roleField.setText(result);
     }
+
+
 }
