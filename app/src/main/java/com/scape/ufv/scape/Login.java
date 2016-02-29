@@ -27,6 +27,7 @@ import com.facebook.login.widget.LoginButton;
 import com.scape.ufv.scape.BancoDeDados.DatabaseParticipante;
 import com.scape.ufv.scape.Bases.Participante;
 import com.scape.ufv.scape.SCAPE.NovoUsuario;
+import com.scape.ufv.scape.conexaoPHP.LogInActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -43,6 +44,8 @@ public class Login extends AppCompatActivity {
     private Button loginButton;
     private EditText nomeLogin;
     private EditText senhaLogin;
+    private TextView status;
+    private TextView role;
     private static final String NAME = "name";
     private static final String ID = "id";
     private Button cadastrarButton;
@@ -74,6 +77,8 @@ public class Login extends AppCompatActivity {
             nomeLogin = (EditText) findViewById(R.id.ETnome);
             senhaLogin = (EditText) findViewById(R.id.ETsenha);
             cadastrarButton = (Button) findViewById(R.id.BTcadastrar);
+            status = (TextView) findViewById(R.id.status);
+            role = (TextView) findViewById(R.id.role);
 
 
             db = new DatabaseParticipante(getApplicationContext());
@@ -184,23 +189,28 @@ public class Login extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
-                    Participante enviar = null;
-                    int contador = 0;
-                    for (Participante confirma : cadastros) {
-                        if (confirma.getEmail().equals(nomeLogin.getText().toString()) && confirma.getSenha().equals(senhaLogin.getText().toString())) {
-                            contador++;
-                            enviar = confirma;
-                        }
-                    }
-                    if (contador == 1) {
-                        Toast.makeText(Login.this, "Login Aceito!!", Toast.LENGTH_LONG).show();
-                        // Intent in = new Intent(getContext(),
-                        //         MainActivity.class);
-                        //  in.putExtra("objeto", enviar);
-                        //  startActivity(in);
-                    } else {
-                        Toast.makeText(Login.this, "Senha ou usuário inválidos.", Toast.LENGTH_LONG).show();
-                    }
+                    String nome = nomeLogin.getText().toString();
+                    String senha = senhaLogin.getText().toString();
+                    new LogInActivity(getApplicationContext(),status,role).execute(nome,senha);
+
+
+//                    Participante enviar = null;
+//                    int contador = 0;
+//                    for (Participante confirma : cadastros) {
+//                        if (confirma.getEmail().equals(nomeLogin.getText().toString()) && confirma.getSenha().equals(senhaLogin.getText().toString())) {
+//                            contador++;
+//                            enviar = confirma;
+//                        }
+//                    }
+//                    if (contador == 1) {
+//                        Toast.makeText(Login.this, "Login Aceito!!", Toast.LENGTH_LONG).show();
+//                        // Intent in = new Intent(getContext(),
+//                        //         MainActivity.class);
+//                        //  in.putExtra("objeto", enviar);
+//                        //  startActivity(in);
+//                    } else {
+//                        Toast.makeText(Login.this, "Senha ou usuário inválidos.", Toast.LENGTH_LONG).show();
+//                    }
 
 
                 }

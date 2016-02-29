@@ -2,11 +2,67 @@
 <items version="2" >
 
     <item
-        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.0/app/build/intermediates/exploded-aar/com.facebook.android/facebook/4.5.1/jars/classes.jar"
+        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="dbb8771c554b040e0210c040e66e40c176e84bda">
-        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.0/app/build/intermediates/pre-dexed/debug/classes-89167e1c40257549a74179e982d999e20badf6fa.jar" />
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-49729c612b3e929efabe3146a921d76352cfad3d.jar" />
+    </item>
+    <item
+        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/classes-78685750927730dd11380c3c1f4af983ce5e5dfb.jar" />
+    </item>
+    <item
+        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/classes-f0ff384790ba8159df150ed3df67beaf02609aba.jar" />
+    </item>
+    <item
+        jar="/Users/souzadomingues/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.0-57a9dabf0a3aa2911da7649f8939e2754a38b121.jar" />
+    </item>
+    <item
+        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/classes-798bdf683c2292a943b9537d2225e26f35a86bc1.jar" />
+    </item>
+    <item
+        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/classes-2676f63f93fa90b9f80f297d66049c05470c4308.jar" />
+    </item>
+    <item
+        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/classes-18a0f7f0bc1494b1195ee05c0adfc71296b737cb.jar" />
+    </item>
+    <item
+        jar="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/exploded-aar/com.facebook.android/facebook/4.5.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ab288cf0f15c4954b1b6907a83d1d0750d885136">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/classes-859ba3b78f4838ac8ea07d5a35a860cf951be948.jar" />
+    </item>
+    <item
+        jar="/Users/souzadomingues/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/souzadomingues/AndroidStudioProjects/scape2.1/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-7802574e9febd728781633c5d1a3c9ea73fe0985.jar" />
     </item>
 
 </items>

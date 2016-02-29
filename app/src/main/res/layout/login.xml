@@ -114,5 +114,23 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/scapefavicon" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/status"
+        android:layout_below="@+id/BTFacebookLogin"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/role"
+        android:layout_below="@+id/status"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
