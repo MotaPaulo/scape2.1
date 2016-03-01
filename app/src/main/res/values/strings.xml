@@ -6,7 +6,7 @@
 <string name="facebook_app_id">1593332177596278</string>
 
 <!-- Fragment_tab1-->
-<string name="nome">Nome de usuário</string>
+<string name="nome">Nome</string>
 <string name="email" translatable="false">Email</string>
 <string name="senha">Senha</string>
 <string name="login">Entrar</string>

@@ -2,6 +2,7 @@ package com.scape.ufv.scape;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -40,17 +41,18 @@ import java.util.List;
 public class Login extends AppCompatActivity {
 
 
+    private static final String PREFS_NAME = "DadosPessoais";
     private String fbAccessToken;
     private Button loginButton;
-    private EditText nomeLogin;
+    private EditText emailLogin;
     private EditText senhaLogin;
-    private TextView status;
-    private TextView role;
+    private String userData;
     private static final String NAME = "name";
     private static final String ID = "id";
     private Button cadastrarButton;
     private TextView greeting;
     private Profile profile;
+
 
 
     List<Participante> cadastros = new ArrayList<Participante>();
@@ -59,6 +61,7 @@ public class Login extends AppCompatActivity {
     // private TextView skipLoginButton;
     private SkipLoginCallback skipLoginCallback;
     private CallbackManager callbackManager;
+
 
     public interface SkipLoginCallback {
         void onSkipLoginPressed();
@@ -74,11 +77,9 @@ public class Login extends AppCompatActivity {
 
 
             loginButton = (Button) findViewById(R.id.BTlogin);
-            nomeLogin = (EditText) findViewById(R.id.ETnome);
+            emailLogin = (EditText) findViewById(R.id.ETemail);
             senhaLogin = (EditText) findViewById(R.id.ETsenha);
             cadastrarButton = (Button) findViewById(R.id.BTcadastrar);
-            status = (TextView) findViewById(R.id.status);
-            role = (TextView) findViewById(R.id.role);
 
 
             db = new DatabaseParticipante(getApplicationContext());
@@ -91,6 +92,11 @@ public class Login extends AppCompatActivity {
             loginButtonFace.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(LoginResult loginResult) {
+//                    Profile userProfile = Profile.getCurrentProfile();
+//                    SharedPreferences myLogin = getSharedPreferences(PREFS_NAME, 0);
+//                    SharedPreferences.Editor editor = myLogin.edit();
+//                    editor.putString("Nome", userProfile.getName());
+//                    editor.commit();
                     finish();
                     Toast.makeText(Login.this, "Login successful", Toast.LENGTH_SHORT).show();
                     GraphRequest request = GraphRequest.newMeRequest(
@@ -189,11 +195,44 @@ public class Login extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
-                    String nome = nomeLogin.getText().toString();
+                    String email = emailLogin.getText().toString();
                     String senha = senhaLogin.getText().toString();
-                    new LogInActivity(getApplicationContext(),status,role).execute(nome,senha);
 
 
+                    LogInActivity myLogin = (LogInActivity) new LogInActivity(new LogInActivity.AsyncResponse() {
+                        @Override
+                        public void processFinish(String output) {
+                            Log.v("Dados:", "Dados2 = " + output);
+                            if(output.equals("1")){
+                                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                                emailLogin.setText("");
+                                senhaLogin.setText("");
+                            }
+                            else {
+                                String[] dadosUsuarios = output.split("/");
+                                SharedPreferences dadosPessoais = getSharedPreferences(PREFS_NAME, 0);
+                                SharedPreferences.Editor editor = dadosPessoais.edit();
+                                editor.putString("Email", dadosUsuarios[0]);
+                                editor.putString("Nome", dadosUsuarios[1]);
+                                editor.commit();
+                                Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        }
+                    }).execute(email, senha);
+
+
+
+
+                    //Log.v("Dados", "Dados = " + userData);
+//                    String[] dadosUsuarios = userData.split("/");
+//                    SharedPreferences dadosPessoais = getSharedPreferences(PREFS_NAME, 0);
+//                    SharedPreferences.Editor editor = dadosPessoais.edit();
+//                    editor.putString("Email", dadosUsuarios[0]);
+//                    editor.putString("Nome", dadosUsuarios[1]);
+//                    editor.commit();
+//                    Toast.makeText(Login.this, "Login successful", Toast.LENGTH_SHORT).show();
+//                    finish();
 //                    Participante enviar = null;
 //                    int contador = 0;
 //                    for (Participante confirma : cadastros) {
@@ -262,6 +301,9 @@ public class Login extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
 
 

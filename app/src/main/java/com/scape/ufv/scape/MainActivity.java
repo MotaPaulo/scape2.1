@@ -2,6 +2,7 @@ package com.scape.ufv.scape;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.Time;
@@ -26,6 +27,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
 
+    private static final String PREFS_NAME = "DadosPessoais";
     private gridView_adapter mAdapter;
     private ArrayList<String> listTitles;
     private ArrayList<Integer> listIcons;
@@ -103,11 +105,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
+        SharedPreferences myAccount = getSharedPreferences(PREFS_NAME, 0);
+        String nome = myAccount.getString("Nome", "NULL");
+        Log.v("Nome: ", nome);
         userProfile = Profile.getCurrentProfile();
-        if(userProfile == null)
-            specialIntent = new Intent(getApplicationContext(), Login.class);
+        if(nome.equals("NULL") == false)
+            specialIntent = new Intent(getApplicationContext(), Logout.class);
         else if(userProfile != null)
             specialIntent = new Intent(getApplicationContext(), Logout.class);
+        else
+            specialIntent = new Intent(getApplicationContext(), Login.class);
         Toast.makeText(getApplicationContext(), "Ended on Resume", Toast.LENGTH_SHORT).show();
     }
 

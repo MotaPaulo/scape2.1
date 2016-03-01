@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/ETnome"
+        android:id="@+id/ETemail"
         android:minHeight="50dp"
         android:paddingStart="15dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:autoText="false"
         android:textCursorDrawable="@null"
-        android:hint="@string/nome"
+        android:hint="@string/email"
         android:background="#f0f0f0"
         android:minWidth="300dp"
         android:layout_alignParentTop="false"
@@ -38,7 +38,7 @@
         android:minHeight="50dp"
         android:paddingStart="15dp"
         android:layout_gravity="center"
-        android:layout_below="@+id/ETnome"
+        android:layout_below="@+id/ETemail"
         android:hint="@string/senha"
         android:background="#f0f0f0"
         android:elegantTextHeight="true"
@@ -113,24 +113,6 @@
         android:maxWidth="100dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/scapefavicon" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/status"
-        android:layout_below="@+id/BTFacebookLogin"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/role"
-        android:layout_below="@+id/status"
-        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

@@ -1,9 +1,7 @@
 package com.scape.ufv.scape.conexaoPHP;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,13 +17,18 @@ import java.net.URLEncoder;
  * Created by souzadomingues on 29/02/16.
  */
 public class LogInActivity extends AsyncTask<String, Void , String> {
-    private TextView statusField, roleField;
-    private Context context;
 
-    public LogInActivity(Context context, TextView statusField, TextView roleField){
-        this.context = context;
-        this.statusField = statusField;
-        this.roleField = roleField;
+
+    public interface AsyncResponse{
+        void processFinish(String output);
+    }
+
+    public AsyncResponse delegate = null;
+
+
+    public LogInActivity(AsyncResponse delegate){
+
+        this.delegate = delegate;
     }
 
     protected void onPreExecute(){
@@ -36,11 +39,11 @@ public class LogInActivity extends AsyncTask<String, Void , String> {
     @Override
     protected String doInBackground(String... params) {
         try {
-            String usuario = (String)params[0];
+            String email = (String)params[0];
             String senha = (String)params[1];
 
             String link = "http://scape.pe.hu/App/loginApp.php";
-            String dados = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(usuario, "UTF-8");
+            String dados = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8");
             dados += "&" + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(senha, "UTF-8");
             Log.v("Dados: ", dados);
 
@@ -63,6 +66,7 @@ public class LogInActivity extends AsyncTask<String, Void , String> {
                 sb.append(line);
                 break;
             }
+            Log.v("SB:", sb.toString());
             return sb.toString();
 
 
@@ -79,7 +83,12 @@ public class LogInActivity extends AsyncTask<String, Void , String> {
 
     @Override
     protected void onPostExecute(String result){
-        this.statusField.setText("Login Successful");
-        this.roleField.setText(result);
+        if(result.equals("1"))
+        {
+            delegate.processFinish("1");
+        }
+        else{
+            delegate.processFinish(result);
+        }
     }
 }
