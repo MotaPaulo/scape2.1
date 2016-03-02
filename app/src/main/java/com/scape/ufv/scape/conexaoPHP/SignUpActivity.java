@@ -1,8 +1,7 @@
 package com.scape.ufv.scape.conexaoPHP;
 
-import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.TextView;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,14 +17,17 @@ import java.net.URLEncoder;
  * Created by souzadomingues on 29/02/16.
  */
 public class SignUpActivity extends AsyncTask<String, Void, String> {
-    private TextView statusField, roleField;
-    private Context context;
 
 
-    public SignUpActivity(Context context, TextView statusField, TextView roleField){
-        this.context = context;
-        this.statusField = statusField;
-        this.roleField = roleField;
+    public interface AsyncResponse{
+        void processFinish(String output);
+    }
+
+    public AsyncResponse delegate = null;
+
+
+    public SignUpActivity(AsyncResponse delegate){
+        this.delegate = delegate;
     }
 
     protected void onPreExecute(){
@@ -63,6 +65,7 @@ public class SignUpActivity extends AsyncTask<String, Void, String> {
                 sb.append(line);
                 break;
             }
+            Log.v("SB:", sb.toString());
             return sb.toString();
 
 
@@ -75,13 +78,18 @@ public class SignUpActivity extends AsyncTask<String, Void, String> {
             e.printStackTrace();
         }
 
-        return null;
+
+        return "2";
     }
 
     @Override
     protected void onPostExecute(String result){
-        this.statusField.setText("Sign up sucessful");
-        this.roleField.setText(result);
+        if(result.equals("1"))
+            delegate.processFinish("1");
+        else if(result.equals("2"))
+            delegate.processFinish("2");
+        else
+            delegate.processFinish(result);
     }
 
 

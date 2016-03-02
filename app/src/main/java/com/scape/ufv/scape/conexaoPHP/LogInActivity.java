@@ -78,17 +78,19 @@ public class LogInActivity extends AsyncTask<String, Void , String> {
             e.printStackTrace();
         }
 
-        return null;
+        return "2";
     }
 
     @Override
     protected void onPostExecute(String result){
-        if(result.equals("1"))
-        {
-            delegate.processFinish("1");
-        }
-        else{
-            delegate.processFinish(result);
+        if(result != null) {
+            if (result.equals("1")) {
+                delegate.processFinish("1");
+            } else if(result.equals("2")) {
+                delegate.processFinish("2");
+            } else {
+                delegate.processFinish(result);
+            }
         }
     }
 }

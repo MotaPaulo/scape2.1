@@ -53,4 +53,10 @@
     <string name="cadastro">Sign up</string>
     <string name="confirmarsenha">Confirm password</string>
     <string name="preenchercampos">Fill in the fields below:</string>
+    <string name="loginfailed">Wrong data!</string>
+    <string name="loginsuccessful">Login successful!</string>
+    <string name="noconnection">No network connection</string>
+    <string name="senhasdiferentes">Passwords don\'t match</string>
+    <string name="fillallfields">Fill all the fields!</string>
+    <string name="emailinvalido">Invalid email!</string>
 </resources>

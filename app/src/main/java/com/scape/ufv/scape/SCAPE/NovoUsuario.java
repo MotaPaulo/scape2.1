@@ -1,9 +1,8 @@
 package com.scape.ufv.scape.SCAPE;
 
 
-import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +13,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.scape.ufv.scape.BancoDeDados.DatabaseParticipante;
 import com.scape.ufv.scape.Bases.Participante;
 import com.scape.ufv.scape.R;
+import com.scape.ufv.scape.conexaoPHP.SignUpActivity;
 
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
@@ -31,6 +32,7 @@ import java.util.List;
 public class NovoUsuario extends AppCompatActivity{
 
 
+    private static final String PREFS_NAME = "DadosPessoais";
     // Progress Dialog
     private ProgressDialog pDialog;
 
@@ -56,10 +58,12 @@ public class NovoUsuario extends AppCompatActivity{
 
     JSONArray products = null;
 
-    EditText nome;
-    EditText instituicao;
-    EditText email;
-    EditText senha;
+    private EditText nome;
+    private EditText instituicao;
+    private EditText email;
+    private EditText senha;
+    private EditText confirmarSenha;
+    private Button cadastrar;
     ListView lista;
     Button cria;
 
@@ -75,6 +79,43 @@ public class NovoUsuario extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro);
+        nome = (EditText) findViewById(R.id.nome);
+        email = (EditText) findViewById(R.id.email);
+        senha = (EditText) findViewById(R.id.usuariosenha);
+        confirmarSenha = (EditText) findViewById(R.id.usuariosenha2);
+        cadastrar = (Button) findViewById(R.id.cadastrar);
+        cadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean fieldsOK = checkFields();
+                if(fieldsOK){
+                    SignUpActivity signUp = (SignUpActivity) new SignUpActivity(new SignUpActivity.AsyncResponse() {
+                        @Override
+                        public void processFinish(String output) {
+                            Log.v("Dados:", "Dados2 = " + output);
+                            if(output.equals("1")){
+                                Toast.makeText(getApplicationContext(), "Email em uso" , Toast.LENGTH_SHORT).show();
+                            }
+                            else if(output.equals("2")){
+                                Toast.makeText(getApplicationContext(), getString(R.string.noconnection), Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                String[] dadosUsuarios = output.split("/");
+                                SharedPreferences dadosPessoais = getSharedPreferences(PREFS_NAME, 0);
+                                SharedPreferences.Editor editor = dadosPessoais.edit();
+                                editor.putString("Email", dadosUsuarios[0]);
+                                editor.putString("Nome", dadosUsuarios[1]);
+                                editor.commit();
+                                Toast.makeText(getApplicationContext(), getString(R.string.cadastrosuccessful), Toast.LENGTH_SHORT).show();
+
+                                finish();
+                            }
+                        }
+                    }).execute(nome.getText().toString(), email.getText().toString(), senha.getText().toString());
+                }
+            }
+        });
+
 
         //Inicio comentario
 
@@ -156,6 +197,30 @@ public class NovoUsuario extends AppCompatActivity{
 
 
     }
+
+    private boolean checkFields(){
+        String s1 = senha.getText().toString();
+        String s2 = confirmarSenha.getText().toString();
+        String emailCheck = email.getText().toString();
+        String nameCheck = nome.getText().toString();
+        if((nameCheck.equals("")) || (emailCheck.equals("")) || (s1.equals("")) || (s2.equals(""))){
+            Toast.makeText(getApplicationContext(), getString(R.string.fillallfields), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(s1.equals(s2) == false){
+            Toast.makeText(getApplicationContext(), getString(R.string.senhasdiferentes), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(emailCheck.contains("@") == false){
+            Toast.makeText(getApplicationContext(), getString(R.string.emailinvalido), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
+
+
+
     private class CarregaInscricao extends AsyncTask<String, String, String> {
 
         /**

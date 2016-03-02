@@ -98,7 +98,7 @@ public class Login extends AppCompatActivity {
 //                    editor.putString("Nome", userProfile.getName());
 //                    editor.commit();
                     finish();
-                    Toast.makeText(Login.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getString(R.string.loginsuccessful), Toast.LENGTH_SHORT).show();
                     GraphRequest request = GraphRequest.newMeRequest(
                             AccessToken.getCurrentAccessToken(),
                             new GraphRequest.GraphJSONObjectCallback() {
@@ -204,9 +204,12 @@ public class Login extends AppCompatActivity {
                         public void processFinish(String output) {
                             Log.v("Dados:", "Dados2 = " + output);
                             if(output.equals("1")){
-                                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.loginfailed) , Toast.LENGTH_SHORT).show();
                                 emailLogin.setText("");
                                 senhaLogin.setText("");
+                            }
+                            else if(output.equals("2")){
+                                Toast.makeText(getApplicationContext(), getString(R.string.noconnection), Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 String[] dadosUsuarios = output.split("/");
@@ -215,7 +218,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("Email", dadosUsuarios[0]);
                                 editor.putString("Nome", dadosUsuarios[1]);
                                 editor.commit();
-                                Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.loginsuccessful), Toast.LENGTH_SHORT).show();
                                 finish();
                             }
                         }
@@ -262,6 +265,7 @@ public class Login extends AppCompatActivity {
                     Intent in = new Intent(Login.this,
                             NovoUsuario.class);
                     startActivity(in);
+                    finish();
                 }
             });
         //}

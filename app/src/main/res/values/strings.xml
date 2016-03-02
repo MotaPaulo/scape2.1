@@ -76,9 +76,16 @@
     <string name="title_activity_logout">Logout</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
 
+    <string name="loginfailed">Dados incorretos!</string>
+    <string name="loginsuccessful">Login feito com sucesso!</string>
+    <string name="cadastrosuccessful">Cadastro feito com sucesso!</string>
+    <string name="noconnection">Sem conexão à rede!</string>
 
 <!-- New account-->
     <string name="cadastro">Cadastrar</string>
     <string name="confirmarsenha">Confirmar senha</string>
     <string name="preenchercampos">Preencha os campos abaixo:</string>
+    <string name="fillallfields">Preencha todos os campos!</string>
+    <string name="senhasdiferentes">Senhas diferentes!</string>
+    <string name="emailinvalido">Email invalido!</string>
 </resources>
